@@ -1,0 +1,10 @@
+{% load static %}
+<div class="list-group">
+{% for category in categories %}
+    {% if category.slug == selected_language  %}
+    <a class="list-group-item list-group-item-action active text-center text-white border-info border-top rounded mt-2 text-uppercase" href="{% url 'blogs_by_category' category.slug %}">{{category.name|title}}</a>
+    {% else %}
+    <a class="list-group-item list-group-item-action text-center text-primary border-info border-top rounded mt-2 text-uppercase" href="{% url 'blogs_by_category' category.slug %}">{{category.name|title}}</a>
+    {% endif %}
+{% endfor %}
+</div>

@@ -1,0 +1,7 @@
+This is a small scale blog application project for personal use. 
+
+If you want to log in as admin , these are the informations you need =>
+
+username = admin
+
+password = 1234

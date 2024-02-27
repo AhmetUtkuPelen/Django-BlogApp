@@ -1,0 +1,17 @@
+{% load static %}
+{% block content %}
+<div class="card mb-3">
+    <div class="row">
+        <div class="col-md-3">
+            <img src="{{ language.image.url }}">
+        </div>
+        <div class="col-md-9 text-center">
+            <div class="card-body">
+                <h5 class="card-title"><a class="text-danger text-decoration-none" href={% url 'blog_details' language.slug %}>{{language.title}}</a></h5>
+                <p class="card-text text-primary">{{language.description|safe}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% comment %} ! <img src="{% static 'img/'|add:language.image %}"> ! {% endcomment %}

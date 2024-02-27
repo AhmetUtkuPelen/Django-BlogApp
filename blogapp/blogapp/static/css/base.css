@@ -1,0 +1,39 @@
+*{
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+.bi-emoji-sunglasses{
+color: white;
+margin-top: 4px;
+cursor: pointer;
+font-size: 25px;
+position: relative;
+}
+.bi-moon{
+color: white;
+margin-top: 4px;
+cursor: pointer;
+font-size: 25px;
+position: relative;
+}   
+.sec{
+position: relative;
+background-color: white;
+overflow: hidden;
+min-height: 100vh;
+}    
+.star{
+position: absolute;
+color: pink;
+}    
+.star::before{
+content: '\f005';
+font-family: fontAwesome;
+}    
+.star.animate{
+color: chartreuse;
+text-shadow: 0 0 5px chartreuse,
+0 0 20px chartreuse,
+0 0 30px chartreuse;
+}

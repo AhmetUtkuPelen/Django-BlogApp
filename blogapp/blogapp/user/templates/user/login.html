@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css_files %}{% endblock css_files %}
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+<div class="container mt-3">
+    <div class="col text-center">
+        <h1 class="text-primary">Login</h1>
+        <hr>
+        {% comment %} ! POST method posts you the url where you are at - so we dont need to use action in this form , action takes url path ! {% endcomment %}
+        <form method="POST">
+            {% csrf_token %}
+            {% if error %}
+            <div class="alert alert-dark text-danger">{{error}}</div>
+            {% endif %}
+            <div class="mb-3">
+                <label for="username" class="form-label text-danger">Username</label>
+                <input type="text" class="form-control" name="username" placeholder="Your Username">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label text-danger">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Your Password">
+            </div>
+            <input type="submit" value="Login" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+{% endblock content %}

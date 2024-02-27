@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Block Details{% endblock title %}
+{% block content %}
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center">
+                <img src="{{ language.image.url }}">
+            </div>
+            <div class="text-center">
+                <h1 class="text-danger m-3 fs-1">{{language.title}}</h1>
+                <p>{{language.description|safe}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

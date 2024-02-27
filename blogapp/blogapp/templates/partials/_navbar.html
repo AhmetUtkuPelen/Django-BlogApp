@@ -1,0 +1,24 @@
+{% load static %}
+<nav class="navbar bg-dark text-info navbar-expand-lg">
+    <div class="container">
+        <a href="{% url 'home' %}" class="navbar-brand text-white">AUP BLOG</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"><span class="text-white border border-white rounded"><i class="fa-solid fa-xmark"></i></span></button>
+        <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-link"><a href="{% url 'home' %}" class="nav-item text-info text-decoration-none">HomePage</a></li>
+            <li class="nav-link"><a href="{% url 'blogs' %}" class="nav-item text-info text-decoration-none">Blogs</a></li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+            {% if user.is_authenticated %}
+                <li class="nav-link"><a href="{% url 'logout' %}" class="nav-item text-info text-decoration-none">Log Out</a></li>
+                <li class="nav-link"><a href="" class="nav-item text-info text-decoration-none">Welcome, <span class="text-danger">{{ user.username|title }}</span></a></li>
+                <i class="bi-emoji-sunglasses" id="toggleDark"></i>
+            {% else %}
+                <li class="nav-link"><a href="{% url 'register' %}" class="nav-item text-info text-decoration-none">Register</a></li>
+                <li class="nav-link"><a href="{% url 'login' %}" class="nav-item text-info text-decoration-none">Log In</a></li>
+                <i class="bi-emoji-sunglasses" id="toggleDark"></i>
+            {% endif %}
+        </ul>
+    </div>
+    </div>
+</nav>
